@@ -65,14 +65,11 @@ def print_events_by_month(events_by_month, hourly_wage):
         print()
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Read events from an ICS file')
-    parser.add_argument('file_path', type=str, help='Path to the ICS file')
-    parser.add_argument('hourly_wage', type=float, help='Hourly wage')
+    hourly_wage = float(input("Enter your hourly wage in USD: "))
+    file_path = input("Enter the path to the ICS file (e.g., calendar.ics): ")
 
-    args = parser.parse_args()
-
-    if not check_file_extension(args.file_path):
+    if not check_file_extension(file_path):
         exit()
 
-    events_by_month = read_ics_file(args.file_path)
-    print_events_by_month(events_by_month, args.hourly_wage)
+    events_by_month = read_ics_file(file_path)
+    print_events_by_month(events_by_month, hourly_wage)
