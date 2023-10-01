@@ -65,8 +65,8 @@ def print_events_by_month(events_by_month, hourly_wage):
         print()
 
 if __name__ == '__main__':
-    hourly_wage = float(input("Enter your hourly wage in USD: "))
-    file_path = input("Enter the path to the ICS file (e.g., calendar.ics): ")
+    hourly_wage = float(input("Enter your hourly wage: "))
+    file_path = input("Enter the path to the ICS file: ")
 
     if not check_file_extension(file_path):
         exit()
